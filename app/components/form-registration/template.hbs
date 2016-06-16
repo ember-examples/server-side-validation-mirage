@@ -1,9 +1,10 @@
 {{yield}}
 <form>
   <p>
-    <label>First name:
-      {{input value=model.firstname}}
-    </label>
+    <label>First name: {{input value=model.firstname}}</label>
+    {{#each errors.firstname as |error|}}
+      {{error.message}}
+    {{/each}}
   </p>
   <p>
     <label>Last name:
