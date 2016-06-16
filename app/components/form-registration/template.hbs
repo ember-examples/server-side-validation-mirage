@@ -1,0 +1,14 @@
+{{yield}}
+<form>
+  <p>
+    <label>First name:
+      {{input value=model.firstname}}
+    </label>
+  </p>
+  <p>
+    <label>Last name:
+      {{input value=model.lastname}}
+    </label>
+  </p>
+  <button {{action 'save'}}>Save</button>
+</form>
