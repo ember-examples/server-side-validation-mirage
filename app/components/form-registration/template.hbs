@@ -2,8 +2,8 @@
 <form>
   <p>
     <label>First name: {{input value=model.firstname}}</label>
-    {{#each errors.firstname as |error|}}
-      {{error.message}}
+    {{#each model.errors.firstname as |error|}}
+      <span class="errors">{{error.message}}</span>
     {{/each}}
   </p>
   <p>

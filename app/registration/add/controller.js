@@ -4,9 +4,9 @@ export default Ember.Controller.extend({
   actions: {
     save() {
       this.get('model').save().then((registration) => {
-        console.log(registration);
+        // it's a mock, we don't do anything
       }).catch((adapterError) => {
-        console.log(adapterError);
+        // we just need to catch error
       });
     }
   }
