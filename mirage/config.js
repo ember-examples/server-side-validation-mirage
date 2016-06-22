@@ -2,7 +2,7 @@ import Response from 'ember-cli-mirage/response';
 
 export default function() {
 
-  this.namespace = '/api';    // make this `api`, for example, if your API is namespaced
+  this.namespace = '/api';
 
   this.post('registrations', function(schema, request) {
    let attrs = JSON.parse(request.requestBody).data.attributes;

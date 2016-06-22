@@ -1,4 +1,17 @@
-{{yield}}
+<p>
+  To generate errors use one of the following:
+  <ul>
+    <li>Mike as First name</li>
+    <li>Smith as Last name</li>
+    <li>John as First name and Doe as Last name</li>
+  </ul>
+</p>
+
+{{#each model.errors.base as |error|}}
+  <span class="errors">{{error.message}}</span>
+{{/each}}
+
+{{log model.errors}}
 <form>
   <p>
     <label>First name: {{input value=model.firstname}}</label>
@@ -10,6 +23,9 @@
     <label>Last name:
       {{input value=model.lastname}}
     </label>
+    {{#each model.errors.lastname as |error|}}
+      <span class="errors">{{error.message}}</span>
+    {{/each}}
   </p>
   <button {{action 'save'}}>Save</button>
 </form>
