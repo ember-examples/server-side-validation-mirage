@@ -1,15 +1,12 @@
 {{yield}}
-<form>
-  <p>
-    <label>First name: {{input value=model.firstname}}</label>
-    {{#each model.errors.firstname as |error|}}
-      <span class="errors">{{error.message}}</span>
-    {{/each}}
-  </p>
-  <p>
-    <label>Last name:
-      {{input value=model.lastname}}
-    </label>
-  </p>
-  <button {{action 'save'}}>Save</button>
-</form>
+
+
+{{#form-for model as |f|}}
+  {{f.text-field "firstname"}}
+  {{f.text-field "lastname"}}
+
+  {{f.select-field "gender" "unknown male female"}}
+  {{f.checkbox-field "terms" label="I agree to the Terms of Service"}}
+
+  {{f.submit "Submit"}}
+{{/form-for}}
